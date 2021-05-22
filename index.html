@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Calculator</title>
+</head>
+<body>
+    <center>
+        <h1>Basic Calculator</h1>
+        <pre>
+            
+            Enter Number 1:
+            <input type="text" name="no1" id="no1">
+
+            Operations:
+            <input type="button" value="0" onClick=takevalue(0)><input type="button" value="1" onClick=takevalue(1)><input type="button" value="2" onClick=takevalue(2)>
+            <input type="button" value="3" onClick=takevalue(3)><input type="button" value="4" onClick=takevalue(4)><input type="button" value="5" onClick=takevalue(5)>
+            <input type="button" value="6" onClick=takevalue(6)><input type="button" value="7" onClick=takevalue(7)><input type="button" value="8" onClick=takevalue(8)>
+            <input type="button" value="9" onClick=takevalue(9)>
+
+            <input type="button" value="+" onClick=add()>
+            <input type="button" value="-" onClick=sub()>
+            <input type="button" value="*" onClick=mul()>
+            <input type="button" value="/" onClick=div()>
+
+            Result:
+            <input type="number" name="result" id="result">
+
+            Calculate:
+            <input type="button" value="=" onclick="calculateFun()"
+        </pre>
+        
+    </center>
+
+    <script>
+        var no1,no2;
+        function getInputs(){
+            no1=parseInt(document.getElementById("no1").value);
+            no2=parseInt(document.getElementById("no2").value);
+
+            console.log(no1);
+            console.log(no2);
+        }
+
+        function takevalue(no){
+            no2= parseInt(no);
+            no1=document.getElementById("no1").value; 
+            document.getElementById("no1").value=no1+""+no2;
+        }
+
+        function calculateFun(){
+            document.getElementById("result").value=eval(document.getElementById("no1").value);
+            console.log("eval function="+eval(document.getElementById("no1").value));
+            //document.getElementById("no1").value=takevalue()
+        }
+
+        function add(){  
+            no1=document.getElementById("no1").value;
+            document.getElementById("no1").value=no1+"+";
+        //     getInputs();
+        //     document.getElementById("result").value=no1+no2;
+        //    console.log("in add");
+        //     alert(no1+no2);
+        }
+        function sub(){   
+            no1=document.getElementById("no1").value; 
+            document.getElementById("no1").value=no1+"-";   
+        //     getInputs();
+        //    console.log("in sub");
+        //     alert(no1-no2);
+        }
+        function mul(){  
+            no1=document.getElementById("no1").value; 
+            document.getElementById("no1").value=no1+"*";
+        //     getInputs();          
+        //    console.log("in mul");
+        //     alert(no1*no2);
+        }
+        function div(){ 
+            no1=document.getElementById("no1").value; 
+            document.getElementById("no1").value=no1+"/";
+        //     getInputs();           
+        //    console.log("in div");
+        //     alert(no1/no2);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
